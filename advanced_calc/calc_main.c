@@ -4,6 +4,12 @@
 
 void exit_procs(void);
 
+// maybe we use struct codes.
+struct pointers {
+    int *p1; // a adress
+    int *p2; // b adress
+};
+
 int main(void)
 {   
     atexit(exit_procs);
