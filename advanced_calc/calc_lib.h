@@ -23,7 +23,12 @@ int multiplication(int a, int b)
 
 int division(int a, int b)
 {
-    return a/b; //! aricmatic problem, ıdk
+    return a/b; //* problem solved
+}
+
+int mod(int a, int b, int m)
+{
+    return ((a+b) * 2) % m;
 }
 
 /*
