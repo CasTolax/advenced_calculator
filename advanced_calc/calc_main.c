@@ -4,11 +4,12 @@
 
 void exit_procs(void);
 
-// maybe we use struct codes.
-struct pointers {
-    int *p1; // a adress
-    int *p2; // b adress
-};
+struct calc_main
+{
+    int *p1; // a 
+    int *p2; // b
+}p;
+
 
 int main(void)
 {   
@@ -17,14 +18,18 @@ int main(void)
     int input;
     int a, b;
 
+    // this is a and b adress
+    p.p1 = &a; 
+    p.p2 = &b;
+
     printf(" -- advanced Calculator -- \n");
 
     while(1){
 
-        printf("\n1) add 2) sub 3) mul 4) div 5) mod 6)  exit\n");
+        printf("\n1) add 2) sub 3) mul 4) div 5) mod 6)circle calculator 7) exit\n");
         scanf("%d",&input);
 
-        if(input == 6){
+        if(input == 7){
             exit(EXIT_SUCCESS);
         }
 
@@ -39,18 +44,27 @@ int main(void)
         case 1: {
             int result = addition(a,b);
             printf("result = %d\n",result);
+
+            printf("\n a adress = %p",p.p1);
+            printf("\n b adress = %p", p.p2);
             break;
         }
 
         case 2: {
             int result = subtraction(a,b);
             printf("result = %d\n",result);
+
+             printf("\n a adress = %p",p.p1);
+             printf("\n b adress = %p", p.p2);
             break;
         }
 
         case 3: {
             int result = multiplication(a,b);
             printf("result = %d\n",result);
+
+             printf("\n a adress = %p",p.p1);
+             printf("\n b adress = %p", p.p2);
             break;
         }
 
@@ -60,6 +74,9 @@ int main(void)
             } else {
                 int result = division(a,b);
                 printf("result = %d\n",result);
+
+                 printf("\n a adress = %p",p.p1);
+                 printf("\n b adress = %p", p.p2);
             }
             break;
         }
@@ -70,11 +87,25 @@ int main(void)
             scanf("%d",&m);
 
             int result = mod(a,b,m);
-            printf("result = %d",result);
-            
+            printf("\nresult = %d",result);
+
+             printf("\n a adress = %p",p.p1);
+            printf("\n b adress = %p", p.p2);
             break;
         }
+        
+         case 6: { 
+            double radius;
 
+            printf("enter the radius = ");
+            scanf("%lf",&radius);
+            
+            printf("Diameter: %.2f\n", getdiameter(radius));
+            printf("Perimeter: %.2f\n", getperimeter(radius));
+            printf("Area: %.2f\n", getarea(radius));
+            break;
+
+         }
         default:
             printf("Invalid input\n");
         }
