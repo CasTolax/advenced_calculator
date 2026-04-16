@@ -31,14 +31,20 @@ int mod(int a, int b, int m)
     return ((a+b) * 2) % m;
 }
 
-/*
-float get_circle(float area, float perimeter,float radius, float diameter)
+// circle calculations
+static inline double getdiameter(double radius)
 {
-     
-    We defined PI = 3.1416
-    area, perimeter, radius, diameter
-    
-    return area,perimeter,radius,diameter; 
+    return 2 * radius;
+}
+
+static inline double getperimeter(double radius)
+{
+    return 2 * PI * radius;
+}
+
+static inline double getarea(double radius)
+{
+    return PI * radius * radius;
 }
 
 */
