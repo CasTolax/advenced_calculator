@@ -2,11 +2,12 @@
 #include <stdio.h>
 #include "calc_lib.h"
 
+
 void exit_procs(void);
 
 struct calc_main
 {
-    int *p1; // a 
+    int *p1; // a
     int *p2; // b
 }p;
 
@@ -15,8 +16,9 @@ int main(void)
 {   
     atexit(exit_procs);
 
-    int input;
-    int a, b;
+    int input;   // ask the input
+    int a,b;    // basic calculations 
+    double x;   // trigonometer
 
     // this is a and b adress
     p.p1 = &a; 
@@ -26,12 +28,15 @@ int main(void)
 
     while(1){
 
-        printf("\n1) add 2) sub 3) mul 4) div 5) mod 6)circle calculator 7) exit\n");
+        printf("\n 1) add 2) sub 3) mul 4) div 5) mod 6)circle calculator 99) exit\n");
+        printf("7) Trigonometer Calculations \n ");
+
         scanf("%d",&input);
 
-        if(input == 7){
+        if(input == 99){
             exit(EXIT_SUCCESS);
         }
+        
 
         printf("a = ");
         scanf("%d",&a);
@@ -94,7 +99,7 @@ int main(void)
             break;
         }
         
-         case 6: { 
+        case 6: { 
             double radius;
 
             printf("enter the radius = ");
@@ -106,6 +111,16 @@ int main(void)
             break;
 
          }
+        case 7: {
+            printf("enter angle(radian: )");
+            scanf("%lf",&x);
+
+            printf("sin(x) = %.4f\n", sin(x));
+            printf("cos(x) = %.4f\n", cos(x));
+            printf("tan(x) = %.4f\n", tan(x));
+            break;
+        }
+
         default:
             printf("Invalid input\n");
         }
