@@ -1,10 +1,11 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
 
 #ifndef calc_lib_h
 #define calc_lib_h
 
-#define PI 3.1416 // 3.1416
+#define PI 3.141592653589793 // PI number
 
 int addition(int a, int b)
 {
@@ -23,7 +24,7 @@ int multiplication(int a, int b)
 
 int division(int a, int b)
 {
-    return a/b; //* problem solved
+    return a/b; 
 }
 
 int mod(int a, int b, int m)
@@ -47,6 +48,16 @@ static inline double getarea(double radius)
     return PI * radius * radius;
 }
 
-*/
+// basic calculations with square and cube.
+static inline double getSquare(double z)
+{
+    return z * z;
+}
+
+static inline double getCube(double z)
+{
+    return z * z * z;
+}
+
 
 #endif
