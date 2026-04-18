@@ -18,6 +18,7 @@ int main(void)
 
     int input;   // ask the input
     int a,b;    // basic calculations 
+    double z;   // square and cube
     double x;   // trigonometer
 
     // this is a and b adress
@@ -28,8 +29,8 @@ int main(void)
 
     while(1){
 
-        printf("\n 1) add 2) sub 3) mul 4) div 5) mod 6)circle calculator 99) exit\n");
-        printf("7) Trigonometer Calculations \n ");
+        printf("\n 1) add 2) sub 3) mul 4) div 5) mod 6)circle calculator 7) square 8) cube 99) exit\n");
+        printf("9) Trigonometer Calculations \n ");
 
         scanf("%d",&input);
 
@@ -112,7 +113,30 @@ int main(void)
 
          }
         case 7: {
-            printf("enter angle(radian: )");
+
+           printf("enter the square: ");
+           scanf("%lf",&z);
+
+           double result_sqr = getSquare(z);
+           printf("result = %0.2f",result_sqr);
+
+           break;
+        }
+
+        case 8: {
+            
+            printf("enter the cube: ");
+            scanf("%lf",&z);
+
+            double result_cube = getCube(z);
+            printf("result = %0.2f",result_cube);
+
+            break;
+        }
+
+        case 9: {
+
+             printf("enter angle(radian: )");
             scanf("%lf",&x);
 
             printf("sin(x) = %.4f\n", sin(x));
